@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="{{ strings.page.lang }}" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+  <link rel="author" href="./humans.txt" />
+  <link rel="stylesheet" href="./src/scss/App.scss">
+  <title>{{ strings.page.title }}</title>
+  <meta name="description" content="{{ strings.page.description }}">
+  <meta property="og:locale" content="fr">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ strings.opengraph.title }}">
+  <meta property="og:description" content="{{ strings.opengraph.description }}">
+  <meta property="og:url" content="{{ strings.opengraph.url }}">
+  <meta property="og:site_name" content="{{ strings.opengraph.site_name }}">
+  <meta property="og:image" content="{{ strings.opengraph.image }}">
+  <meta property="og:image:width" content="{{ strings.opengraph.image_width }}">
+  <meta property="og:image:height" content="{{ strings.opengraph.image_height }}">
+  <meta property="og:image:alt" content="{{ strings.opengraph.image_alt }}">
+  <meta property="og:image:type" content="{{ strings.opengraph.image_type }}">
+  <meta name="twitter:url" content="{{ strings.opengraph.url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ strings.twitter.title }}">
+  <meta name="twitter:description" content="{{ strings.twitter.description }}">
+  <meta name="twitter:image" content="{{ strings.twitter.image }}">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K8D9VZZ');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body class="{{ strings.page.lang }}">
+
+  {% include "ui/site-loader.njk" ignore missing %}
+
+  <div
+    class="d-flex flex-column"
+    data-scroll-container
+  >
+    {% block header %}
+      {% include "ui/site-header.njk" ignore missing %}
+      {% include "ui/site-nav.njk" ignore missing %}
+    {% endblock %}
+
+    <main class="site-wrapper">
+      {% block content %}
+        Default content
+      {% endblock %}
+    </main>
+
+    {% block footer %}
+      {% include "ui/site-footer.njk" ignore missing %}
+    {% endblock %}
+
+  </div>
+
+  {# <div class="site-loader bg-black position-fixed t-0 l-0 w-100 h-100 z-1000" aria-hidden="true"></div> #}
+
+  <script src="./src/js/index.js"></script>
+
+</body>
+</html>

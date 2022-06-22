@@ -1,0 +1,42 @@
+<header class="site-header position-fixed t-0 l-0 w-100" data-ui="site-header" data-site-header>
+  <div class="site-header__bg position-absolute t-0 l-0 w-100 h-100"></div>
+  <div class="site-header__wrap pt-3 pb-3 d-flex align-items-center justify-content-between container-fluid z-200">
+    <figure 
+      class="site-header__logo position-relative"
+    >{% include 'src/svg/logo.svg' %}</figure>
+    <aside>
+      <nav class="site-header__nav position-relative d-none d-lg-block">
+        <ul class="d-flex align-items-center list-none m-0 p-0 fz-14">
+          <li>
+            <a class="td-none" href="#environment" data-scroll-to>Environnement</a>
+          </li>
+          <li>
+            <a class="td-none" href="#services" data-scroll-to>Services</a>
+          </li>
+          <li>
+            <a class="td-none" href="#commodity" data-scroll-to>Commodités</a>
+          </li>
+          <li>
+            <a class="td-none" href="#project" data-scroll-to>Le projet</a>
+          </li>
+          <li>
+            <a class="td-none" href="#condos" data-scroll-to>Condos</a>
+          </li>
+          <li style="--index:4;">
+            <a class="td-none btn --link --link-arrow" href="#newsletter" data-scroll-to>
+              <span class="btn__label">Inscrivez-vous</span>
+              <span class="btn__icon">{% include 'src/svg/fleche.svg' %}</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <button class="d-lg-none site-header__burger position-relative d-flex align-items-center justify-content-center" aria-expanded="false" aria-controls="site-nav">
+        <div class="site-header__burger__inner position-relative">
+        <span class="position-absolute t-0 l-0 w-100"></span>
+        <span class="position-absolute t-50 l-0 w-100"></span>
+        <span class="position-absolute t-100 l-0 w-100"></span>
+        </div>
+      </button>
+    </aside>
+  </div>
+</header>

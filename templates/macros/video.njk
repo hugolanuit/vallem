@@ -1,0 +1,23 @@
+{% macro video(src, src_mobile, width, height, classname, attributes = [], muted=true, autoplay=true, loop=true, playsInline=true, disableRemotePlayback=true, playOnEnter=true, pauseOnExit=true, preload='metadata') %}
+  <video
+    class="w-100 {{ classname }}"
+    src="{{ src }}"
+    {# data-src="{{ src }}"
+    {% if src_mobile %}data-src-mobile="{{ src_mobile }}"{% endif %} #}
+    {% if width %}width="{{ width }}"{% endif %}
+    {% if height %}height="{{ height }}"{% endif %}
+    {% if muted %}muted{% endif %}
+    {% if autoplay %}autoplay{% else %}preload="{{ preload }}"{% endif %}
+    {% if loop %}loop{% endif %}
+    {% if playsInline %}playsInline{% endif %}
+    {% if disableRemotePlayback %}disableRemotePlayback{% endif %}
+    {% if playOnEnter or pauseOnExit %}
+    data-scroll
+    data-scroll-call="video"
+    data-module="video"
+    {% endif %}
+    {% if pauseOnExit %}data-scroll-repeat="true"{% endif %}
+    {{ attributes|join(' ') }}
+  >
+</video>
+{% endmacro %}

@@ -1,0 +1,42 @@
+{% import "macros/picture-with-webp-source.njk" as webp_picture %}
+
+<section class="project d-grid grid-column-md-2 align-items-center" id="project" data-scroll-section>
+  <aside class="project__leftColumn d-flex flex-column justify-content-center">
+    <div 
+      class="project__content p-3 w-100 mx-auto fz-16"
+      data-scroll
+      data-scroll-offset="100px,0"
+    >
+      <p class="project__subtitle mt-0">UNE CONSTRUCTION RAISONNÉE</p>
+      <h2 class="project__title fz-20 fz-lg-26 fw-400">Le Vallem est un projet à échelle humaine qui invite à déléguer tracas et entretien pour se centrer sur les joies du quotidien. Il rassemble 44 appartements – unités d’une ou de deux chambres ou unités de style penthouse – disposés sur seulement quatre étages.</h2>
+      <div class="project__text">
+        <p>L’orientation du bâtiment a été réfléchie pour optimiser l’ensoleillement et offrir les plus beaux points de vue. À l’intérieur, la quiétude est préservée grâce au choix d’une structure tout béton, d’une fenestration insonorisante et de matériaux de qualité.</p>
+        <p class="mb-0">Ici, tout a été mis en œuvre non seulement pour répondre aux plus récentes normes en matière de design et de construction, mais aussi pour maximiser la superficie habitable et prévoir du rangement à profusion.</p>
+        </div>
+    </div>
+  </aside>
+  <aside class="project__rightColumn p-3 d-flex flex-column justify-content-center position-relative overflow-hidden">
+    <div class="project__cloud position-absolute t-0 l-0 w-100 h-100" data-scroll data-scroll-speed="-1.4">
+      {{ webp_picture.picture_with_webp_source('Vallem_cloud2', 'png') }}
+    </div>
+    <div 
+      class="project__imgWrap box w-100 mx-auto overflow-hidden position-relative"
+      data-scroll
+      data-scroll-target="#project"
+      data-scroll-call="timeline"
+      data-module="scroll-timeline"
+      data-timeline="{{ {scale: [0.7,1]} | json }}"
+    >
+      <figure 
+      class="project__img position-absolute t-0 l-0 w-100 h-100"
+      data-scroll
+      data-scroll-target="#project"
+      data-scroll-call="timeline"
+      data-module="scroll-timeline"
+      data-timeline="{{ {scale: [1.4,1]} | json }}"
+      >
+        {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_constructionraisonnée', 'jpg') }}
+      </figure>
+    </div>
+  </aside>
+</section>

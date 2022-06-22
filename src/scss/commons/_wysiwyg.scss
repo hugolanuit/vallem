@@ -1,0 +1,14 @@
+.wysiwyg {
+  & > *:first-child {
+    margin-top: 0;
+  }
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: currentColor;
+    text-decoration: none;
+  }
+
+}

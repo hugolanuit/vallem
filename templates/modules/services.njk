@@ -1,0 +1,69 @@
+{% import "macros/picture-with-webp-source.njk" as webp_picture %}
+
+<section class="services container-fluid" id="services" data-scroll-section>
+  <div class="d-grid grid-column-md-2 grid-gap-4 align-items-center">
+    <aside 
+      class="services__content w-100 mx-auto p-20 fz-16 order-lg-2"
+      data-scroll
+      data-scroll-offset="100px,0"
+    >
+      <p class="services__subtitle mt-0">TOUS LES SERVICES, À DEUX PAS</p>
+      <h2 class="services__title fz-20 fz-lg-26 fw-400">L’offre commerciale à distance de marche du Vallem est plus que complète : services bancaires et financiers, complexe médical, centres d’entraînement et de bien-être, pharmacie, boutiques spécialisées, restaurants et cafés.</h2>
+      <div class="services__text">
+        <p class="mb-0">Sans oublier le tout nouveau marché alimentaire ICI COOP, accessible directement du hall d’entrée, qui réunit sous un même toit une abondance de produits frais et locaux. <strong>Les grands axes aussi sont à proximité – idéal pour se rendre en ville.</strong></p>
+      </div>
+    </aside>
+    <aside class="services__imgs order-lg-1 mx-auto w-100 position-relative">
+      <div class="services__img1Wrap box z-200 position-relative overflow-hidden">
+        <figure 
+          class="services__imgParallax position-absolute t-0 b-0 l-0 w-100"
+          data-scroll 
+          data-scroll-speed="-0.9"
+        >
+          {{ webp_picture.picture_with_webp_source('VALLEM_IMG_services', 'jpg') }}
+        </figure>
+      </div>
+      <div class="services__img2Wrap box z-100 position-relative" data-scroll data-scroll-speed="0.9">
+        {{ webp_picture.picture_with_webp_source('VALLEM_IMG_facade_icicoop', 'jpg') }}
+      </div>
+    </aside>
+  </div>
+  <div
+    class="services__accordions accordions"
+    data-accordions
+    data-scroll
+    data-scroll-offset="100px,0"
+  >
+      <article
+        class="services__accordion accordions__accordion position-relative overflow-hidden" style="--index:{{ loop.index0 }}"
+      >
+        <button
+          class="services__accordions__btn accordions__btn w-100 fz-22 fz-lg-40 fw-400 position-relative d-flex align-items-center justify-content-start ta-left ta-lg-center"
+          aria-expanded="false"
+        >
+          <span class="d-inline-block accordions__label">Le marché d’alimentation ICI COOP</span>
+          <span class="accordions__arrowDown accordions__arrow" aria-hidden="true">
+            {% include 'src/svg/arrow-down.svg' %}
+          </span>
+          <span class="accordions__arrowUp accordions__arrow" aria-hidden="true">
+            {% include 'src/svg/arrow-up.svg' %}
+          </span>
+        </button>
+        <div class="services__accordions__content accordions__content pt-7" aria-hidden="true">
+          <div class="services__coop d-grid grid-column-md-2 grid-gap-5">
+            <aside class="services__coop__content">
+              <p class="mt-0 fz-20 fz-lg-26">ICI COOP est une épicerie nouveau genre où l’humain est au centre des préoccupations. On y trouve des aliments d’exception dans une ambiance où règne le plaisir de manger.</p>
+              <p class="fz-20 fz-lg-26">Par une abondance de produits et de services locaux axés sur la santé, ICI COOP propose un parcours d’achat aussi unique qu’agréable.</p>
+              <p class="mb-0 fz-16">Le marché d’alimentation ICI COOP du quartier Lumicité est l’idée d’un groupe de citoyens et de gens d’affaires désireux de répondre au besoin des résidents, c’est-à-dire avoir accès à un commerce dynamique offrant des produits locaux de saison. <strong>Il n’y avait pas meilleur choix pour remplir cette mission.</strong></p>
+              <div class="services__coop__logo mt-4 mt-lg-8">{% include 'src/svg/logo-coop.svg' %}</div>
+            </aside>
+            <aside 
+              class="services__coop__imgWrap box mx-auto w-100"
+            >
+              {{ webp_picture.picture_with_webp_source('VALLEM_IMG_tirroir_icicoop', 'jpg') }}
+            </aside>
+          </div>
+        </div>
+      </article>
+  </div>
+</section>

@@ -1,0 +1,74 @@
+{
+  "name": "vallem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.njk",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -r -f ./.cache/ ./dist/",
+    "dev": "npm run clean && ./node_modules/.bin/parcel index.njk --no-source-maps",
+    "build": "node ./build.js",
+    "ngrok": "ngrok http 1234"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hugolanuit/vallem.git"
+  },
+  "author": "Mill3 Studio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hugolanuit/vallem/issues"
+  },
+  "homepage": "https://github.com/hugolanuit/vallem#readme",
+  "dependencies": {
+    "@mill3-packages/system-ui-sass": "0.7.4",
+    "animejs": "3.2.1",
+    "axios": "^0.24.0",
+    "bezier-easing": "^2.1.0",
+    "eventemitter2": "6.4.5",
+    "flickity": "^2.2.2",
+    "form-serialize": "^0.7.2",
+    "locomotive-scroll": "^4.1.4",
+    "sass-easing": "1.0.3",
+    "smoothscroll-polyfill": "^0.4.4",
+    "splitting": "^1.0.6",
+    "swiper": "^7.2.0",
+    "ui": "^0.2.4",
+    "virtual-scroll": "^1.5.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-proposal-class-properties": "^7.16.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "nunjucks": "3.2.2",
+    "parcel-bundler": "1.12.3",
+    "parcel-plugin-nunjucks": "2.2.2",
+    "parcel-plugin-pwa-manifest": "3.0.10",
+    "parcel-plugin-static-files-copy": "^2.6.0",
+    "sass": "1.32.13"
+  },
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "./src/images",
+        "staticOutDir": "src/images"
+      }
+    ]
+  },
+  "pwaManifest": {
+    "name": "Entrelacé",
+    "shortName": "Entrelacé",
+    "startURL": "./",
+    "theme": "#E3FF36",
+    "generateIconOptions": {
+      "baseIcon": "./src/images/favicon.png",
+      "sizes": [
+        192,
+        384,
+        512
+      ],
+      "genFavicons": true
+    }
+  }
+}

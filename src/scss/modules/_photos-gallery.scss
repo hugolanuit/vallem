@@ -1,0 +1,69 @@
+.photos-gallery {
+  $self: &;
+
+  background-color: var(--green);
+  color: var(--white);
+
+  padding: 90px 0;
+
+  &__photo {
+    // max-width: 856px;
+    background-color: var(--gray);
+
+    &:before {
+      padding-bottom: 65%;
+    }
+
+    &.--vertical {
+      margin-left: auto;
+      margin-right: auto;
+
+      max-width: 65%;
+      &:before {
+        padding-bottom: 125%;
+      }
+    }
+  }
+
+  &__slider {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+
+      /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+      &:active {
+        cursor: grabbing;
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
+      }
+  }
+
+  &__slide {
+    flex: 0 0 80%;
+    height: auto;
+    self-align-items: stretch;
+  }
+
+  @include inView() {
+
+    #{$self}__slide {
+      @include slideInUpStart;
+    }
+    
+
+    &.is-inview {
+      #{$self}__slide {
+        @include slideInUpEnd;
+
+        --el-index: calc(var(--index) + 1);
+
+        &:nth-child(3){
+          --el-index: 0;
+        }
+        transition-delay: calc(var(--el-index) * 200ms + 150ms);
+      }
+    }
+  }
+
+}

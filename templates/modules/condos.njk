@@ -1,0 +1,110 @@
+{% import "macros/picture-with-webp-source.njk" as webp_picture %}
+
+<section class="condos container-fluid" id="condos" data-condos data-scroll-section>
+  <header 
+    class="condos__header mb-4"
+    data-scroll
+    data-scroll-offset="100px,0"
+  >
+    <p class="condos__subtitle mt-0">VOTRE ESPACE</p>
+    <h3 class="condos__title fz-20 fz-lg-26 fw-400">Au Vallem, les appartements sont tout équipés et prêts à vous accueillir. Il ne vous reste qu’à choisir celui qui fera votre bonheur et à décider où ira le canapé.</h3>
+  </header>
+  <div class="condos__grid d-grid">
+    <nav 
+      class="condos__nav fz-22 fz-lg-40 fw-400"
+      data-scroll
+      data-scroll-offset="100px,0"
+    >
+      <ul class="list-none m-0 p-0">
+        <li style="--index:0;">
+          <button data-toggle-section="cuisine" aria-expanded="true">
+            Cuisine
+          </button>
+        </li>
+        <li style="--index:1;">
+          <button data-toggle-section="salle-de-bain" aria-expanded="false">
+            Salle de bain
+          </button>
+        </li>
+        <li style="--index:2;">
+          <button data-toggle-section="confort" aria-expanded="false">
+            Confort
+          </button>
+        </li>
+        <li style="--index:3;">
+          <button data-toggle-section="inclusions" aria-expanded="false">
+            Inclusions
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <div 
+      class="condos__sections"
+      data-scroll
+      data-scroll-offset="100px,0"
+    >
+      <section 
+        class="condos__section d-grid grid-column-md-2 justify-content-between w-100"
+        aria-hidden="false"
+        data-section="cuisine"
+      >
+        <ul class="condos__list list-none p-0 fz-16 fw-300 ">
+          <li style="--index:0;"><span>Comptoirs de quartz calacatta</span></li>
+          <li style="--index:1;"><span>Îlot-déjeuner avec insertion de bois</span></li>
+          <li style="--index:2;"><span>Armoires de cuisine contemporaines offertes en deux teintes neutres</span></li>
+          <li style="--index:3;"><span>Luminaires sur rail</span></li>
+        </ul>
+        <aside class="condos__imgWrap box w-100 justify-self-end">
+          {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_espace-cuisine', 'jpg') }}
+        </aside>
+      </section>
+      <section 
+        class="condos__section d-grid grid-column-md-2 justify-content-between w-100"
+        aria-hidden="true"
+        data-section="salle-de-bain"
+      >
+        <ul class="condos__list list-none p-0 fz-16 fw-300 ">
+          <li style="--index:0;"><span>Douche et bain-douche en céramique avec écran de verre</span></li>
+          <li style="--index:1;"><span>Meuble-lavabo avec rangement</span></li>
+          <li style="--index:2;"><span>Très grand miroir servant aussi de pharmacie double</span></li>
+          <li style="--index:3;"><span>Revêtement de plancher durable et facile d’entretien</span></li>
+        </ul>
+        <aside class="condos__imgWrap box w-100 justify-self-end">
+          {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_espace-sdb', 'jpg') }}
+        </aside>
+      </section>
+      <section 
+        class="condos__section d-grid grid-column-md-2 justify-content-between w-100"
+        aria-hidden="true"
+        data-section="confort"
+      >
+        <ul class="condos__list list-none p-0 fz-16 fw-300 ">
+          <li style="--index:0;"><span>Luminosité abondante</span></li>
+          <li style="--index:1;"><span>Fluidité d’une pièce à l’autre</span></li>
+          <li style="--index:2;"><span>Matériaux et coloris favorisant la sérénité</span></li>
+          <li style="--index:3;"><span>Balcons privatifs</span></li>
+        </ul>
+        <aside class="condos__imgWrap box w-100 justify-self-end">
+          {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_espace-confort', 'jpg') }}
+        </aside>
+      </section>
+      <section 
+        class="condos__section d-grid grid-column-md-2 justify-content-between w-100"
+        aria-hidden="true"
+        data-section="inclusions"
+      >
+        <ul class="condos__list list-none p-0 fz-16 fw-300 ">
+          <li style="--index:0;"><span>Système de climatisation</li>
+          <li style="--index:1;"><span>5 électroménagers</span></li>
+          <li style="--index:2;"><span>Forfait internet *</span></li>
+          <li style="--index:3;"><span>Luminaires</span></li>
+        </ul>
+        <ul class="condos__list list-none p-0 fz-16 fw-300 ">
+          <li style="--index:4;"><span>Espace de stationnement</span></li>
+          <li style="--index:5;"><span>Espace de rangement</span></li>
+          <li style="--index:6;"><span>Eau chaude</span></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,12 @@
+.outro {
+  $self: &;
+
+  &__wrap {
+    height: 200vh;
+  }
+
+  // hide on native scroll
+  html.will-scroll-native & {
+    display: none;
+  }
+}

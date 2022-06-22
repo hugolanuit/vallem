@@ -1,0 +1,78 @@
+.intro {
+  $self: &;
+
+  padding-top: 221px;
+  padding-bottom: 110px;
+  margin-top: -120px;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 548px;
+    padding-bottom: 223px;
+    margin-top: -278px;
+  }
+
+  z-index: 300;
+
+  background: linear-gradient(30deg, rgba(158,195,218,0) 70%, rgba(158,195,218,1) 90%), linear-gradient(-7deg, rgba(254,240,221,1) 10%, rgba(219,207,222,1) 40%, rgba(206,207,225,1) 60%, rgba(139,211,231,1) 100%);
+
+  &__title {
+    max-width: 856px;
+  }
+
+  &__text {
+    max-width: 574px;
+  }
+
+  &__bottom {
+    max-width: 574px;
+    padding-top: 158px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 35px;
+      width: 0;
+      height: 88px;
+      border-left: 1px solid;
+
+      opacity: 0.6;
+    }
+  }
+
+  &__cloud {
+    // background-image: url('/src/images/Vallem_cloud1.png');
+    // background-size: 100% auto;
+    // background-position: center center;
+    // background-repeat: no-repeat;
+  }
+
+  &__header, &__bottom {
+    @include inView() {
+      @include slideInUpStart;
+
+
+      &.is-inview {
+        @include slideInUpEnd;
+        transition-delay: 250ms;
+      }
+    }
+  }
+
+  &__bottom {
+    @include inView() {
+      &:before {
+        transform: scale3d(0,0,1);
+      }
+
+
+      &.is-inview {
+        &:before {
+          transform: scale3d(1.0001,1.0001,1);
+          transition: transform 900ms $easeOutCubic;
+          transition-delay: 450ms;
+        }
+      }
+    }
+  }
+}

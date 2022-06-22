@@ -1,0 +1,84 @@
+
+@mixin hoverDevice() {
+  @media (any-hover: hover) {
+    @content;
+  }
+}
+
+@mixin touchDevice() {
+  @media (hover: none) {
+    @content;
+  }
+}
+
+@mixin underlineDrawing($height: 2px) {
+  @include underlineDrawingBase($height);
+  &:hover,
+  &:focus,
+  &:active {
+    &::before {
+      animation: reUnderlineRollover 850ms 200ms $easeOutExpo both;
+    }
+    &:after {
+      animation: reUnderlineRollover 850ms $easeOutExpo both;
+    }
+  }
+}
+
+@mixin underlineDrawingBase($height: 2px) {
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: $height solid currentColor;
+  }
+
+  &::before {
+    left: -105%;
+  }
+
+}
+
+@each $height in (1,2,3,4,5,6) {
+  @keyframes underlineDrawing-#{$height} {
+    from {
+      background-size: 0% calc(100% - #{$height}px);
+    }
+    to {
+      background-size: 100% calc(100% - #{$height}px);
+    }
+  }
+}
+
+@mixin linkRollover($rollover: true) {
+  $bottom: 0em;
+  $height: 0.07em;
+
+  
+  background-image: linear-gradient(transparent calc(100% - #{$height}), currentColor #{$height});
+  background-repeat: no-repeat;
+  background-size: 100% calc(100% - #{$height + $bottom});
+  text-decoration: none;
+  
+  @include hoverDevice {
+    @if $rollover {
+      &:hover,
+      &:focus,
+      &:active {
+        @include linkRolloverHover;
+      }
+    }
+  }
+}
+
+@mixin linkRolloverHover() {
+  animation: linkRedraw 750ms cubic-bezier(.645,.045,.355,1) both;
+}

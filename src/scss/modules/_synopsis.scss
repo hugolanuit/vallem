@@ -1,0 +1,69 @@
+
+.synopsis {
+  $self: &;
+  grid-gap: 24px;
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: auto minmax(auto, 350px);
+    grid-column-gap: 36px;
+
+    &.--synopsis-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    &.--synopsis-1 {
+      margin-top: 145px;
+    }
+
+    &.--synopsis-2 {
+      margin-top: 50px;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    grid-template-columns: 1fr minmax(auto, 497px);
+  }
+
+  &__quote {
+    blockquote {
+      // max-width: 780px;
+    }
+
+    &__text {
+      font-size: clamp(20px, 2.68vw, 120px);
+    }
+  }
+
+  &__text {
+    text-indent: var(--first-line-indent);
+  }
+
+  @include inView() {
+
+    #{$self}__quote__text__line {
+      display: block;
+      @include slideInUpStart(calc(70px * var(--line-index)));
+    }
+
+    #{$self}__text {
+      @include slideInUpStart(100px);
+    }
+
+    &.is-inview {
+      #{$self}__quote__text__line {
+        transition-delay: calc(25ms * var(--line-index));
+        @include slideInUpEnd(0, 1.5s);
+      }
+      #{$self}__text {
+        @include slideInUpEnd();
+
+        @include media-breakpoint-down(sm) {
+          transition-delay: calc(25ms * var(--quoteLinesLength) + 150ms);
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,32 @@
+{% import "macros/picture-with-webp-source.njk" as webp_picture %}
+
+<section class="hero ta-center container-fluid position-relative" id="hero" data-scroll-section>
+  <figure 
+    class="hero__logo mx-auto position-relative"
+    data-scroll
+    data-scroll-offset="100px,0"
+  >{% include 'src/svg/logo.svg' %}</figure>
+  <h1 
+    class="hero__title fz-22 fz-lg-26 fw-300 m-0"
+    data-scroll
+  >Bien entouré</h1>
+  <div 
+  class="hero__imgWrap box w-100 mx-auto overflow-hidden position-relative"
+    data-scroll
+    data-scroll-target="#hero"
+    data-scroll-call="timeline"
+    data-module="scroll-timeline"
+    data-timeline="{{ {scale: [0.8,1]} | json }}"
+  >
+    <figure 
+    class="hero__img position-absolute t-0 l-0 w-100 h-100"
+    data-scroll
+    data-scroll-target="#hero"
+    data-scroll-call="timeline"
+    data-module="scroll-timeline"
+    data-timeline="{{ {scale: [1.3,1]} | json }}"
+    >
+      {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_1', 'jpg') }}
+    </figure>
+  </div>
+</section>

@@ -1,0 +1,74 @@
+.stroke-border {
+  background-color: currentColor;
+  z-index: 1000;
+  position: absolute;
+
+  // display: block unless specified
+  &:not([class*="d-"]) { display: block; }
+
+  //
+  // orientations
+  //
+  &.--orientation {
+    &-vertical {
+      width: 1px;
+      height: 100%;
+      transform-origin: top center;
+    }
+    &-horizontal {
+      width: 100%;
+      height: 1px;
+      transform-origin: left center;
+      // set max width only when has a --position-[direction] classname
+      &[class*="--position-"] {
+        max-width: 100%;
+
+        @include media-breakpoint-up(lg) {
+          max-width: calc(100% - var(--container-fluid-left-margin) - var(--container-fluid-right-margin));
+        }
+      }
+    }
+  }
+
+  //
+  // Positions
+  //
+  // Note: position axis are matching our .container-fluid left/right padding
+  //
+  &.--position {
+    &-top {
+      top: 0;
+      left: 0;
+
+      @include media-breakpoint-up(lg) {
+        left: var(--container-fluid-left-margin);
+      }
+    }
+    &-bottom {
+      bottom: 0;
+      left: 0;
+
+      @include media-breakpoint-up(lg) {
+        left: var(--container-fluid-left-margin);
+      }
+    }
+    &-left {
+      top: 0px;
+      left: var(--container-fluid-left-margin);
+    }
+    &-right {
+      top: 0px;
+      right: var(--container-fluid-right-margin);
+    }
+  }
+
+  // initial states
+  @include strokeBorderInitial();
+
+  // in-view animation
+  @include inView {
+    &.is-inview {
+      @include strokeBorderInview();
+    }
+  }
+}

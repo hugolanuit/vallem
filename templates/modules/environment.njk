@@ -1,0 +1,34 @@
+{% import "macros/picture-with-webp-source.njk" as webp_picture %}
+
+<section class="environment d-grid grid-column-md-2 align-items-center"
+  id="environment" 
+  data-scroll
+  data-scroll-repeat="true"
+  data-scroll-call="header-invert"
+  data-scroll-section>
+  <aside 
+  class="environment__content p-3 w-100 mx-auto fz-16"
+  data-scroll
+  data-scroll-offset="100px,0"
+  >
+    <p class="environment__subtitle mt-0">ANCRÉ DANS LA NATURE</p>
+    <h2 class="environment__title fz-20 fz-lg-26 fw-400">Le Vallem fait partie du quartier Lumicité, situé à l’entrée de la vallée du Richelieu, à quelques minutes du mont Saint-Bruno et du mont Saint-Hilaire.</h2>
+    <div class="environment__text">
+      <p>Il offre des vues spectaculaires sur la nature qui l’entoure en plus de proposer un accès à un club de golf réputé et à une canopée protégée où se trouvent plus de 4 km de sentiers et des installations en plein air signées Espace Tonik.</p>
+      <p>Développé dans une perspective durable, ce milieu vivant et vibrant se veut un havre pour les gens actifs et sensibles à l’environnement qui souhaitent vivre au sein d’une communauté à leur image.</p>
+      <p class="mb-0">
+        <a class="td-none btn --link --link-arrow fz-14 td-none" href="https://www.google.com/maps/place/4605+Chem.+du+Cr%C3%A9puscule,+Saint-Mathieu-de-Beloeil,+QC+J3G+0R2/data=!4m2!3m1!1s0x4cc9002a8d81aab9:0x3eb7327ea6bc02ea?sa=X&ved=2ahUKEwjyk6bvtZn4AhWlkYQIHb77DGkQ8gF6BAgJEAE" target="_blank">
+          <span class="btn__label">Localiser sur Google Maps</span>
+          <span class="btn__icon">{% include 'src/svg/fleche.svg' %}</span>
+        </a>
+      </p>
+    </div>
+  </aside>
+  <aside 
+    class="environment__imgWrap box"
+    data-scroll
+    data-scroll-offset="100px,0"
+  >
+    {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_carte', 'jpg') }}
+  </aside>
+</section>

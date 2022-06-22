@@ -1,0 +1,40 @@
+$font-directory: "../fonts/";
+
+
+@font-face {
+    font-family: 'Beatrice';
+    src: url('#{$font-directory}Beatrice-Light.woff2')  format('woff2'),
+       url('#{$font-directory}Beatrice-Light.woff')  format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Beatrice';
+    src: url('#{$font-directory}Beatrice-Regular.woff2')  format('woff2'),
+       url('#{$font-directory}Beatrice-Regular.woff')  format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Beatrice';
+    src: url('#{$font-directory}Beatrice-Medium.woff2')  format('woff2'),
+       url('#{$font-directory}Beatrice-Medium.woff')  format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+.ff-body {
+  font-family: font-family("body");
+}
+.ff-heading {
+  font-family: font-family("heading");
+}
+.ff-extended {
+  font-family: font-family("extended");
+}

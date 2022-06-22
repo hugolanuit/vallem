@@ -1,0 +1,144 @@
+.episodes {
+  $self: &;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 140px;
+  }
+
+  // accordions container
+  &__accordions {
+    @include media-breakpoint-up(xl) {
+      padding-left: 76px;
+    }
+
+    @include inView() {
+      --initialDelay: 0ms;
+
+      @include media-breakpoint-down(md) {
+        --initialDelay: 150ms;
+      }
+
+      #{$self}__accordion__btn {
+        @include slideInUpStart();
+      }
+      
+      
+      &.is-inview {
+        #{$self}__accordion__btn {
+          @include slideInUpEnd();
+          transition-delay: calc((var(--index) * 150ms) + 100ms + var(--initialDelay));
+        }
+        .stroke-border {
+          @include strokeBorderInview();
+          transition-delay: calc(var(--index) * 150ms + var(--initialDelay));
+        }
+      }
+    }
+  }
+
+  // each accordion
+  &__accordion {
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    &__btn {
+      grid-template-columns: 1fr 17px 1fr;
+
+      &__plus {
+        svg {
+          transition: transform 0.75s $easeInOutQuart;
+        }
+      }
+      &__number {
+        width: 43px;
+        height: 43px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include media-breakpoint-up(lg) {
+          width: 82px;
+          height: 82px;
+        }
+
+        svg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transform: rotate(-90deg);
+
+          circle {
+            transition: stroke-dashoffset 0.75s $easeInOutQuart;
+            stroke-dasharray: var(--length);
+            stroke-dashoffset: var(--length);
+          }
+        }
+      }
+
+      @include hoverDevice {
+        &:hover {
+          #{$self}__accordion__btn__plus svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      &[aria-expanded="true"] {
+        #{$self}__accordion__btn__plus svg {
+          transform: rotate(225deg);
+        }
+        #{$self}__accordion__btn__number svg circle {
+          stroke-dashoffset: 0;
+        }
+      }
+    }
+
+    &__content {
+      a {
+        color: currentColor;
+        // text-decoration: none;
+      }
+
+      &__inner {
+        padding: 0 0 spacer(4) 0;
+        @include media-breakpoint-up(lg) {
+          padding: spacer(6) 0 spacer(6) 100px;
+        }
+      }
+
+      &__text {
+        @include slideInUpStart(50px);
+      }
+
+      &__nav {
+        a {
+          @include fadeInStart();
+        }
+      }
+
+      &[aria-hidden="true"] {
+        height: 0px;
+        padding: 0 !important;
+        overflow: hidden;
+        visibility: hidden;
+        animation: none;
+      }
+
+      &[aria-hidden="false"] {
+        #{$self}__accordion__content__text {
+          @include slideInUpEnd();
+        }
+        #{$self}__accordion__content__nav a {
+          @include fadeInEnd();
+          transition-delay: calc(250ms * var(--index));
+        }
+      }
+    }
+  }
+}

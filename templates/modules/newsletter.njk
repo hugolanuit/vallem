@@ -1,0 +1,103 @@
+<section 
+  {# data-newsletter
+  data-module="newsletter" #}
+  id="newsletter"
+  class="newsletter container-fluid overflow-hidden" 
+  data-scroll-section
+  >
+  <div class="newsletter__content position-relative"
+    data-scroll
+    data-scoll-offset="100px,0"
+  >
+    <header class="newsletter__header mb-4 ta-center">
+      <h3 class="newsletter__title fz-22 fz-lg-40 fw-400 m-0">Inscrivez-vous dès maintenant</h3>
+      <p class="newsletter__subtitle fz-20 fz-lg-26 fw-400 m-0">pour profiter des prix de pré-location</p>
+      <p class="newsletter__text fz-16 mx-auto"><strong>Laissez-nous vous aider à trouver ce que vous cherchez.</strong> Remplissez le formulaire ci-dessous et un agent de location communiquera avec vous pour un rendez-vous.</p>
+    </header>
+    <form class="newsletter__form mx-auto" method="post" target="_blank" action="https://maisonsotium.us10.list-manage.com/subscribe/post?u=81305754e2cfa0bfdc7535467&amp;id=f2dd471bd0">
+      {# <div class="newsletter__header hide" data-section="success">
+        <h3>Nous avons reçu votre message</h2>
+        <p><strong>Merci. Nous répondrons à votre message dans les plus brefs délais.</p>
+      </div> #}
+      <div data-section="form">
+        <div class="newsletter__form__row">
+        <h4 class="newsletter__form__checkboxTitle fz-14 fw-700 ta-center">Quel type d'appartement recherchez-vous?</h4>
+          <div class="newsletter__form__checkboxContainer ta-center">
+            <label class="newletter__checkboxLabel fz-14"><input type="checkbox" name="group[184433][1]" value="3 1/2" /> <span>3 <sup>1/2</sup></span></label>
+            <label class="newletter__checkboxLabel fz-14"><input type="checkbox" name="group[184433][1]" value="3 1/2 avec espace bureau" /> <span>3 <sup>1/2</sup> avec espace bureau</span></label>
+            <br>
+            <label class="newletter__checkboxLabel fz-14"><input type="checkbox" name="group[184433][1]" value="4 1/2" /> <span>4 <sup>1/2</sup></span></label>
+            <label class="newletter__checkboxLabel fz-14"><input type="checkbox" name="group[184433][1]" value="4 1/2 avec espace bureau" /> <span>4 <sup>1/2</sup> avec espace bureau</span></label>
+            <label class="newletter__checkboxLabel fz-14"><input type="checkbox" name="group[184433][1]" value="Penthouse" /> <span>Penthouse</span></label>
+          </div>
+          <h4 class="newsletter__form__title fz-16 fw-700 ta-center">VOS INFORMATIONS</h4>
+          <div class="newsletter__form__grid d-grid align-items-end">
+            <aside class="newsletter__form__row --third">
+              <input type="text" required name="NOM" id="nom">
+              <label class="fz-11">Nom</label>
+            </aside>
+            <aside class="newsletter__form__row --third">
+              <input type="email" required name="EMAIL" id="courriel">
+              <label class="fz-11">Courriel</label>
+            </aside>
+            <aside class="newsletter__form__row --third">
+              <input type="tel" required name="TELEPHONE" id="telephone">
+              <label class="fz-11">Téléphone</label>
+            </aside>
+            <aside class="newsletter__form__row">
+              <div class="select-container">
+                <select name="BUDGET" id="budget" required>
+                  <option disabled selected>Sélectionnez</option>
+                  <option value="1500$-1749$">1500$-1749$</option>
+                  <option value="1750$-1999$">1750$-1999$</option>
+                  <option value="2000$-2499$">2000$-2499$</option>
+                  <option value="Plus de 2500$">Plus de 2500$</option>
+                </select>
+              </div>
+              <label class="fz-11">Budget</label>
+            </aside>
+            <aside class="newsletter__form__row">
+              <div class="select-container">
+                <select name="OCCUPATION" required id="date d'occupation">
+                  <option disabled selected>Sélectionnez</option>
+                  option value="Je ne sais pas">Je ne sais pas</option>
+                  <option value="0-6 mois">0-6 mois</option>
+                  <option value="6-12 mois">6-12 mois</option>
+                  <option value="12-24 mois">12-24 mois</option>
+                  <option value="Plus de 24 mois">Plus de 24 mois</option>
+                </select>
+              </div>
+              <label class="fz-11">Date d'occupation</label>
+            </aside>
+            <aside class="newsletter__form__row">
+              <div class="select-container">
+                <select name="STATION" required id="stationnement">
+                  <option disabled selected>Sélectionnez</option>
+                  <option value="Pas de stationnement">Pas de stationnement</option>
+                  <option value="1 stationnement">1 stationnement</option>
+                  <option value="2 stationnements">2 stationnements</option>
+                </select>
+              </div>
+              <label class="fz-11">Stationnement</label>
+            </aside>
+            <aside class="newsletter__form__row">
+              <input type="text" name="REF" id="reference">
+              <label class="fz-11">Référence</label>
+            </aside>
+            <aside class="newsletter__form__row --half">
+              <label class="newletter__checkboxLabel fz-14"><input required type="checkbox" name="group[184437][32]" value="Je ne suis pas un robot" /> Je ne suis pas un robot</label>
+              <label class="newletter__checkboxLabel fz-14 mt-2"><input type="checkbox" name="group[184441][64]" value="Je désire recevoir les nouvelles, invitations et promotions de Otium immobilier." /> Je désire recevoir les nouvelles, invitations et promotions de Otium immobilier.</label>
+            </aside>
+            <aside class="newsletter__form__row --half --centered">
+              <button type="submit" class="fz-24 fw-700 btn --link --link-arrow newsletter__form__submit">
+                <span class="btn__label">Soumettre</span>
+                <span class="btn__icon">{% include 'src/svg/fleche.svg' %}</span>
+              </button>
+            </aside>
+          </div>
+        </div>
+      </div>
+      <div class="newsletter__form__output ta-center fz-14 mt-3"></div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+// reset <button> elements
+
+button {
+  border: none;
+  background: none;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+
+  &.--link {
+    .btn__label {
+      font-weight: bold;
+      // @include linkRollover;
+    }
+
+    .btn__icon {
+      margin-left: .5em;
+      transition: transform 450ms $easeOutCubic;
+
+      svg {
+        fill: currentColor;
+
+        height: .6em;
+        width: auto;
+      }
+      
+    }
+
+    @include hoverDevice {
+      &:hover {
+        .btn__icon {
+          transform: translateX(10px);
+        }
+      }
+    }
+
+  }
+}

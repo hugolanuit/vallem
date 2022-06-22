@@ -1,0 +1,113 @@
+.legend {
+  $self: &;
+
+  padding-bottom: 110px;
+  padding-top: 90px;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 0px;
+    padding-bottom: 232px;
+  }
+
+  background-color: var(--pale-green);
+  color: var(--green);
+
+  &__imgWrap {
+    &:before {
+      padding-bottom: 45%;
+    }
+
+    @include inView() {
+      @include fadeInStart;
+      
+
+      &.is-inview {
+        @include fadeInEnd;
+        transition-delay: 150ms;
+      }
+    }
+  }
+
+  &__content {
+    max-width: 975px;
+
+    @include inView() {
+
+      #{$self}__list > li {
+        @include slideInUpStart;
+      }
+
+      #{$self}__subtitle {
+        @include slideInUpStart(-20px);
+      }
+      
+
+      &.is-inview {
+        #{$self}__list > li {
+          @include slideInUpEnd;
+          transition-delay: calc(var(--index) * 50ms + 250ms);
+        }
+
+        #{$self}__subtitle {
+          @include slideInUpEnd(0px, 650ms);
+          transition-delay: 700ms;
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: repeat(3, auto);
+    }
+
+    grid-gap: 18px 32px;
+
+    > li {
+      position: relative;
+      padding-left: 25px;
+      counter-increment: li;
+
+      @include media-breakpoint-up(lg) {
+
+        &:nth-child(4n+1) {
+          grid-row: 1;
+           
+        }
+
+        &:nth-child(4n+2) {
+          grid-row: 2;
+           
+        }
+
+        &:nth-child(4n+3) {
+          grid-row: 3;
+           
+        }
+
+        &:nth-child(4n+4) {
+          grid-row: 4;
+           
+        }
+      }
+
+      &:before {
+        content: counter(li);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 17px;
+        height: 17px;
+        line-height: 17px;
+
+        border-radius: 100%;
+        text-align: center;
+        border: 1px solid;
+
+        font-size: 10px;
+
+      }
+    }
+  }
+}

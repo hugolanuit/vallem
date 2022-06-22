@@ -1,0 +1,116 @@
+.site-header {
+  $self: &;
+
+  z-index: 9000;
+
+  // @include media-breakpoint-up(lg) {
+  //   padding-top: 47px;
+  // }
+
+  &__wrap {
+    transition: opacity 350ms linear;
+  }
+
+  &__logo {
+    opacity: 0;
+    transition: opacity 350ms linear;
+    
+    pointer-events: none;
+
+    svg {
+      width: 153px;
+      height: auto;
+    }
+  }
+
+  &__bg {
+    opacity: 0;
+    transition: opacity 350ms linear;
+
+    height: 80px;
+    background-color: var(--white);
+  }
+
+  &__burger {
+    width: 42px;
+    height: 42px;
+    border-radius: 100%;
+    background-color: var(--white);
+    transition: background-color 150ms linear, color 150ms linear;
+
+    &__inner {
+      width: 17px;
+      height: 10px;
+    }
+
+    span {
+      margin: 0;
+      transition: transform 650ms $easeInOutCubic;
+      transform-origin: center center;
+
+      border-top: 1px solid;
+
+      &:nth-child(2) {
+        transition-delay: 250ms;
+      }
+    }
+  }
+
+  &__nav {
+
+    > ul {
+      > li {
+        & + li {
+          margin-left: 24px;
+        }
+      }
+    }
+  }
+
+  body.--js-site-nav-opened & {
+    #{$self}__burger {
+      background-color: var(--red);
+      color: var(--white);
+
+      span {
+        &:first-child {
+          transform: translateY(5px) rotate(135deg);
+          transition-delay: 250ms;
+        }
+        &:nth-child(2) {
+          transform: scaleX(0.0001);
+          transition-delay: 0ms;
+        }
+        &:last-child {
+
+          transform: translateY(-5px) rotate(-135deg);
+          transition-delay: 250ms;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    body.--js-scroll-min.--js-scroll-down & {
+      #{$self}__wrap {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+
+    body.--js-scroll-min.--js-scroll-up & {
+      #{$self}__logo {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      #{$self}__bg {
+        opacity: 1;
+      }
+    }
+  }
+
+
+
+}
+

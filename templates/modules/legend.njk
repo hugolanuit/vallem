@@ -1,0 +1,31 @@
+{% import "macros/picture-with-webp-source.njk" as webp_picture %}
+
+<section class="legend" data-scroll-section>
+  <div 
+    class="legend__imgWrap box"
+    data-scroll
+    data-scroll-offset="100px,0"
+  >
+    {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_carte2', 'jpg') }}
+  </div>
+  <footer 
+    class="legend__content container-fluid mt-7"
+    data-scroll
+    data-scroll-offset="100px,0"
+  >
+    <h4 class="legend__subtitle tt-uppercase fz-16 fw-400 mt-0">Légende</h4>
+    <ol class="legend__list list-none p-0 mt-3 fz-14 fw-300">
+      <li style="--index:0;">Complexe médical ELNA</li>
+      <li style="--index:1;">Clinique de physiothérapie Kinatex Sports Physio</li>
+      <li style="--index:2;">Familiprix</li>
+      <li style="--index:3;">Centre dentaire Laurianne Leduc</li>
+      <li style="--index:4;">Clinique d’audioprothésistes Alyn Simard</li>
+      <li style="--index:5;">Üman : Soins médico-esthétiques</li>
+      <li style="--index:6;">OrthoAction othèse / prothèse</li>
+      <li style="--index:7;">CÉÉNA neuropsychologie</li>
+      <li style="--index:8;">Studio Desjardins</li>
+      <li style="--index:9;">Salle multifonctionelle</li>
+      <li style="--index:10;">Marché d’alimentation ICI COOP</li>
+    </ol>
+  </footer>
+</section>

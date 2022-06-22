@@ -1,0 +1,64 @@
+{% import "macros/picture-with-webp-source.njk" as webp_picture %}
+
+<section
+  class="photos-gallery"
+  data-scroll
+  data-scroll-offset="100px,0"
+  data-scroll-section
+  data-module="photos-gallery"
+  data-photos-gallery
+  id="photo-gallery"
+>
+  <div class="photos-gallery__slider swiper-container w-100 overflow-hidden">
+    <div class="swiper-wrapper">
+      <aside class="photos-gallery__slide swiper-slide d-flex justify-content-center align-items-center" style="--index:0;">
+        <figure class="photos-gallery__photo box w-100">
+          {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_gallerie_openplan', 'jpg') }}
+        </figure>
+      </aside>
+      <aside class="photos-gallery__slide swiper-slide d-flex justify-content-center align-items-center" style="--index:2;">
+        <figure class="photos-gallery__photo box w-100">
+          {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_gallerie_kitchen', 'jpg') }}
+        </figure>
+      </aside>
+      <aside class="photos-gallery__slide swiper-slide d-flex justify-content-center align-items-center" style="--index:2;">
+        <figure class="photos-gallery__photo box w-100">
+          {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_gallerie_kitchen2', 'jpg') }}
+        </figure>
+      </aside>
+      <aside class="photos-gallery__slide swiper-slide d-flex justify-content-center align-items-center" style="--index:2;">
+        <figure class="photos-gallery__photo box w-100">
+          {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_gallerie_bedroom', 'jpg') }}
+        </figure>
+      </aside>
+      <aside class="photos-gallery__slide swiper-slide d-flex justify-content-center align-items-center" style="--index:2;">
+        <figure class="photos-gallery__photo box w-100">
+          {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_gallerie_bedroom2', 'jpg') }}
+        </figure>
+      </aside>
+      <aside class="photos-gallery__slide swiper-slide d-flex justify-content-center align-items-center" style="--index:2;">
+        <figure class="photos-gallery__photo box w-100 --vertical">
+          {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_gallerie_sdb', 'jpg') }}
+        </figure>
+      </aside>
+      <aside class="photos-gallery__slide swiper-slide d-flex justify-content-center align-items-center" style="--index:2;">
+        <figure class="photos-gallery__photo box w-100 --vertical">
+          {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_gallerie_sdb2', 'jpg') }}
+        </figure>
+      </aside>
+      <aside class="photos-gallery__slide swiper-slide d-flex justify-content-center align-items-center" style="--index:2;">
+        <figure class="photos-gallery__photo box w-100 --vertical">
+          {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_gallerie_office', 'jpg') }}
+        </figure>
+      </aside>
+      <aside class="photos-gallery__slide swiper-slide d-flex justify-content-center align-items-center" style="--index:1;">
+        <figure class="photos-gallery__photo box w-100">
+          {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_gallerie_openplan2', 'jpg') }}
+        </figure>
+      </aside>
+
+    </div>
+  </div>
+
+
+</section>

@@ -1,0 +1,32 @@
+html {
+  --vh: 1vh;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: font-size("base");
+}
+
+body {
+  // background-color: var(--black);
+  color: var(--red);
+  html:not(.has-scroll-smooth) & {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+}
+
+html.will-scroll-smooth {
+  &,
+  body {
+    overflow: hidden;
+  }
+}
+
+* {
+  letter-spacing: -0.5px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+

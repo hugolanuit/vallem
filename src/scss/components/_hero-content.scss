@@ -1,0 +1,80 @@
+.heroContent {
+  $self: &;
+  
+  &__title {
+    // transform: translateX(calc(50% - 410px));
+    height: 70px;
+    width: 345px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+
+    @include media-breakpoint-up(lg) {
+      height: 170px;
+      width: 820px;
+    }
+
+    svg {
+      transform: translateY(-72px);
+      width: 602px;
+
+      @include media-breakpoint-up(lg) {
+        transform: translateY(-180px);
+        width: 1505px;
+      }
+    }
+
+    &__text {
+      font-family: Elephant;
+      font-size: 120px;
+      letter-spacing: 0.15em;
+    }
+  }
+
+  &__credits {
+    margin-top: 24px;
+
+    &__line {
+      > span {
+        font-weight: 700;
+        font-size: 16px;
+      }
+    }
+  }
+  &__creditsMobile {
+    margin-top: 24px;
+
+    > span {
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+
+  &__synopsisBtn {
+    width: 330px;
+    height: 155px;
+
+    &__icon {
+      transform: scaleX(-1);
+
+      path {
+        stroke-dasharray: var(--length);
+        stroke-dashoffset: var(--length);
+      }
+    }
+  }
+
+  &__trailerBtn {
+    &__icon {
+      svg {
+        width: 14px;
+        height: 14px;
+
+        @include media-breakpoint-up(lg) {
+          width: 22px;
+          height: 22px;
+        }
+      }
+    }
+  }
+}

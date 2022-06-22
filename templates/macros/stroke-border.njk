@@ -1,0 +1,11 @@
+{% macro stroke_border(index = 0, position = 'top', orientation = "horizontal", detect_inview = false) %}
+<span
+  class="stroke-border --position-{{ position }} --orientation-{{ orientation }}"
+  style="--stroke-index: {{ index }};"
+  aria-hidden="true"
+  {% if detect_inview == true %}
+  data-scroll
+  {% endif %}
+>
+</span>
+{% endmacro %}

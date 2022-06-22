@@ -1,0 +1,25 @@
+{% import "macros/picture-with-webp-source.njk" as webp_picture %}
+
+<section class="intro ta-center container-fluid position-relative overflow-hidden" data-scroll-call="header-invert" data-scroll-section>
+  <div class="intro__cloud position-absolute t-0 l-0 w-100 h-100" data-scroll data-scroll-speed="-2.2">
+    {{ webp_picture.picture_with_webp_source('Vallem_cloud1', 'png') }}
+  </div>
+  <header 
+    class="intro__header d-flex flex-column align-items-center position-relative"
+    data-scroll
+    data-scroll-offset="100px,0"
+  >
+    <h2 class="intro__title fz-22 fz-lg-40 fw-400 mt-0 mb-3">Nos condos locatifs architecturaux offrent un panorama époustouflant sur les collines montérégiennes et un environnement parfaitement intégré où règnent la beauté, le bien-être et la convivialité.</h2>
+    <p class="intro__text fz-base fz-lg-20 m-0">Le marché d’alimentation local au rez-de-chaussé, le terrain de golf avoisinant, le boisé privé aménagé pour la marche et le yoga, les commerces de proximité, les couchers de soleil à couper le souffle : <strong>tout a été pensé pour que vous profitiez à fond de la vie dans la vallée.</strong></p>
+  </header>
+  <footer 
+    class="intro__bottom position-relative fz-16 w-100 mx-auto"
+    data-scroll
+    data-scroll-offset="100px,0"
+  >
+    <h3 class="intro__bottom__text fz-20 fw-700 mt-0 mb-4">Emménagez à Sainte-Julie / Saint-Mathieu-de-Belœil DÈS L’HIVER 2022-2023</h3>
+    <p>INSCRIVEZ-VOUS DÈS MAINTENANT POUR PROFITER DES PRIX DE PRÉLOCATION.</p>
+    <p>Unités d’une ou de deux chambres avec ou sans espace bureau.</p>
+    <p class="mb-0">À partir de<br> <span class="fz-26 fw-700">1500$/mois</span></p>
+  </footer>
+</section>

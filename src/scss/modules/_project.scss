@@ -1,0 +1,68 @@
+.project {
+  $self: &;
+
+  @include media-breakpoint-up(lg) {
+    min-height: 80vw;
+  }
+
+  &__leftColumn, &__rightColumn {
+    height: 100%;
+    @include media-breakpoint-up(lg) {
+      padding: 72px;
+    }
+  }
+
+  &__leftColumn {
+    @include media-breakpoint-down(md) {
+      padding-top: 110px;
+      padding-bottom: 110px;
+    }
+
+    background: linear-gradient(5deg, rgba(254,240,234,1) 10%, rgba(219,207,222,1) 40%, rgba(186,196,221,1) 80%, rgba(157,191,214,1) 100%);
+  }
+
+  &__rightColumn {
+    background-color: #ece5f9;
+
+    #{$self}__cloud {
+      
+    }
+  }
+
+  &__content, &__imgWrap {
+    max-width: 526px;
+  }
+
+  &__content {
+    @include inView() {
+
+      #{$self}__title, #{$self}__text {
+        @include slideInUpStart;
+      }
+
+      #{$self}__subtitle {
+        @include slideInUpStart(-20px);
+      }
+      
+
+      &.is-inview {
+        #{$self}__title, #{$self}__text {
+          @include slideInUpEnd;
+          transition-delay: 250ms;
+        }
+
+        #{$self}__subtitle {
+          @include slideInUpEnd(0px, 650ms);
+          transition-delay: 700ms;
+        }
+      }
+    }
+  }
+
+  &__imgWrap {
+
+    &:before {
+      padding-bottom: 133%;
+    }
+  }
+}

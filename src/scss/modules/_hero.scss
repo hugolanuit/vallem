@@ -1,0 +1,110 @@
+.hero {
+  $self: &;
+
+  padding-top: 260px;
+  z-index: 400;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 270px;
+  }
+
+  &__title {
+    @include inView() {
+      --elementIndex: 0;
+      @include fadeInStart;
+
+
+      &.is-inview {
+        @include fadeInEnd;
+        transition-delay: 750ms;
+      }
+    }
+  }
+
+  &__logo {
+    margin-bottom: 98px;
+
+    max-width: 284px;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 84px;
+
+      max-width: 746px;
+    } 
+
+    svg {
+      width: 100%;
+      height: auto;
+
+    }
+
+    @include inView() {
+      overflow: hidden;
+      transform: translate3d(0, 100px, 0);
+
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: -100%;
+        left: 0;
+        height: 200%;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+      }
+
+
+      &.is-inview {
+        transform: translate3d(0, 0, 0);
+        transition: transform 1250ms $easeOutCubic;
+        transition-delay: 250ms;
+
+        &:after {
+          transform: translate3d(0, 100%, 0);
+          transition: transform 1250ms $easeOutCubic;
+          transition-delay: 450ms;
+        }
+      }
+    }
+  }
+
+  &__imgWrap {
+    max-width: 856px;
+    background-color: var(--gray);
+
+    &:before {
+      padding-bottom: 65%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 48px;
+  }
+
+  // &__wrap {
+  //   min-height: calc(var(--vh) * 100);
+
+  //   html.will-scroll-smooth & {
+  //     max-height: calc(var(--vh) * 100);
+  //   }
+  // }
+  // &__video {
+  //   // hide after locomotive-scroll has been initialized (to enable video preloading)
+  //   // OR
+  //   // hide if native scroll
+  //   html.has-scroll-init &,
+  //   html.will-scroll-native & { display: none; }
+  // }
+  // &__videoMobile {
+  //   // hide mobile video if smooth scroll
+  //   html.will-scroll-smooth & {
+  //     display: none;
+  //   }
+  // }
+  // &__canvas {
+  //   // hide canvas if native scroll
+  //   html.will-scroll-native & {
+  //     display: none;
+  //   }
+  // }
+}

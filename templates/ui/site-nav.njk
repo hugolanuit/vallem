@@ -1,0 +1,52 @@
+<header 
+  class="site-nav position-fixed t-0 l-0 w-100 vh-100 pt-3 d-flex flex-column align-items-center container-fluid pointer-events-none overflow-hidden"
+  id="site-nav"
+  data-ui="site-nav" 
+  data-site-nav 
+  aria-hidden="true"
+>
+  <div class="site-nav__bg position-absolute t-0 l-0 w-100 h-100 z-100"></div>
+  <nav class="site-nav__nav position-relative z-200 flex-grow-1 d-flex align-items-center ta-center justify-content-center" style="--length:5;">
+    <ul class="list-none m-0 p-0 fz-20">
+      <li style="--index:0;">
+        <a class="td-none" href="#environment" data-scroll-to>Environnement</a>
+      </li>
+      <li style="--index:1;">
+        <a class="td-none" href="#services" data-scroll-to>Services</a>
+      </li>
+      <li style="--index:2;">
+        <a class="td-none" href="#commodity" data-scroll-to>Commodités</a>
+      </li>
+      <li style="--index:3;">
+        <a class="td-none" href="#project" data-scroll-to>Le projet</a>
+      </li>
+      <li style="--index:4;">
+        <a class="td-none" href="#condos" data-scroll-to>Condos</a>
+      </li>
+      <li style="--index:4;">
+        <a class="td-none btn --link --link-arrow" href="#newsletter" data-scroll-to>
+          <span class="btn__label">Inscrivez-vous</span>
+          <span class="btn__icon">{% include 'src/svg/fleche.svg' %}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <footer class="site-nav__footer w-100 position-relative z-200 py-3 ta-center">
+    <p class="site-nav__socialLabel m-0 tt-uppercase fz-13 mb-3">Suivez-nous</p>
+    <ul class="site-nav__social list-none m-0 p-0 d-flex align-items-center justify-content-center">
+      <li style="--index:0;">
+        <a href="https://www.facebook.com/profile.php?id=100081639057560" class="site-nav__social__links" target="_blank">
+          {% include 'src/svg/facebook.svg' %}
+        </a>
+      </li>
+      {# <li class="ml-3" style="--index:1;">
+        <a href="/" class="site-nav__social__links" target="_blank">
+          {% include 'src/svg/instagram.svg' %}
+        </a>
+      </li> #}
+    </ul>
+    <div class="site-nav__otium position-relative pt-3 mt-3">
+      <figure class="site-nav__otium__logo mx-auto d-inline-block">{% include 'src/svg/logo-otium.svg' %}</figure>
+    </div>
+  </footer>
+</header>

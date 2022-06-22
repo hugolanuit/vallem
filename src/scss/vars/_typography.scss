@@ -1,0 +1,89 @@
+$font-family: (
+  "body": (
+    "Beatrice",
+    "Helvetica Neue",
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue",
+    "Arial",
+    "Noto Sans",
+    "sans-serif",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji"
+  ),
+  "heading": (
+    "Beatrice",
+    "Helvetica Neue",
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue",
+    "Arial",
+    "Noto Sans",
+    "sans-serif",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji"
+  ),
+  "extended": (
+    "Beatrice",
+    "Helvetica Neue",
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue",
+    "Arial",
+    "Noto Sans",
+    "sans-serif",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji"
+  ),
+  "mono": (
+    "SFMono-Regular",
+    "Menlo",
+    "Monaco",
+    "Consolas",
+    "Liberation Mono",
+    "Courier New",
+    "monospace"
+  )
+);
+
+$font-size: (
+  "11": 11px,
+  "12": 12px,
+  "13": 13px,
+  "14": 14px,
+  "16": 16px,
+  "base": 18px,
+  "20": 20px,
+  "22": 22px,
+  "24": 24px,
+  "26": 26px,
+  "36": 36px,
+  "40": 40px,
+  "48": 48px,
+  "64": 64px
+);
+
+$font-weight: (100, 200, 300, 400, 500, 600, 700, 800, 900);
+$text-transform: ("lowercase", "uppercase", "capitalize", "none", "inherit");
+$text-decoration: ("none", "underline", "inherit");
+$text-align: ("left", "right", "center");
+$font-style: ("normal", "italic", "oblique", "inherit");
+$line-height: (
+  "none": 1,
+  "base": 1.333333333,
+  "cool": 1.205,
+  "relaxed": 1.5,
+  "loose": 2,
+);

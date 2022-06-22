@@ -1,0 +1,86 @@
+.newsletter {
+  $self: &;
+
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 308px;
+    padding-bottom: 318px;
+  }
+
+  background-color: var(--pink);
+
+  &__content {
+    @include inView() {
+      @include slideInUpStart;
+
+
+      &.is-inview {
+        @include slideInUpEnd;
+        transition-delay: 150ms;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 50px;
+    max-width: 526px;
+  }
+
+  &__header {
+    margin-bottom: 50px;
+  }
+
+  &__form {
+    max-width: 966px;
+
+    &__grid {
+      @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(12, 1fr);
+      }
+      grid-gap: 24px;
+    }
+
+    &__row {
+      @include media-breakpoint-up(lg) {
+        grid-column: span 3;
+
+        &.--half {
+          grid-column: span 6;
+        }
+
+        &.--third {
+          grid-column: span 4;
+        }
+      }
+
+      &.--centered {
+        -webkit-align-self: center;
+        align-self: center;
+        text-align: center;
+        padding-top: 20px;
+      }
+    }
+
+    &__checkboxContainer {
+      br {
+        display: none;
+      }
+
+      text-align: center;
+      margin-right: -64px;
+
+      br {
+        display: inline;
+      }
+
+      > label {
+        margin-right: 64px;
+        margin-bottom: 24px;
+        display: inline-block;
+      }
+    }
+  }
+
+}

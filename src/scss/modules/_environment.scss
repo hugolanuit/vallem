@@ -1,0 +1,68 @@
+.environment {
+  $self: &;
+
+  @include media-breakpoint-up(lg) {
+    padding: 66px 0;
+  }
+
+  background-color: var(--green);
+  color: var(--white);
+
+  &__content {
+
+    @include media-breakpoint-up(lg) {
+      padding: 72px;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding-top: 120px;
+      padding-bottom: 80px;
+    }
+
+
+    max-width: 670px;
+
+    @include inView() {
+
+      #{$self}__title, #{$self}__text {
+        @include slideInUpStart;
+      }
+
+      #{$self}__subtitle {
+        @include slideInUpStart(-20px);
+      }
+      
+
+      &.is-inview {
+        #{$self}__title, #{$self}__text {
+          @include slideInUpEnd;
+          transition-delay: 250ms;
+        }
+
+        #{$self}__subtitle {
+          @include slideInUpEnd(0px, 650ms);
+          transition-delay: 700ms;
+        }
+      }
+    }
+
+  }
+
+  &__imgWrap {
+    max-height: 1160px;
+
+    &:before {
+      padding-bottom: 160%;
+    }
+
+    @include inView() {
+      @include fadeInStart;
+      
+
+      &.is-inview {
+        @include fadeInEnd;
+        transition-delay: 150ms;
+      }
+    }
+  }
+}

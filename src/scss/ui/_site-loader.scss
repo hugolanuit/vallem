@@ -1,0 +1,15 @@
+.site-loader {
+  $self: &;
+
+  z-index: 9999;
+
+  body.--js-ready & {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 500ms linear;
+
+    html.will-scroll-native & {
+      transition-delay: 1000ms;
+    }
+  }
+}

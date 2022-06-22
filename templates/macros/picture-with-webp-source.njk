@@ -1,0 +1,11 @@
+{% macro picture_with_webp_source(filename, extension, responsive) %}
+  <picture>
+    <source type="image/webp" media="(max-width: 1439px)" srcset="src/images/webp/{{ filename }}.{{ extension }}.webp">
+    <source type="image/{{ extension }}" media="(max-width: 1439px)" srcset="src/images/{{ filename }}.{{ extension }}">
+    {% if responsive == '2x' %}
+      <source type="image/webp" media="(min-width: 1440px)" srcset="src/images/webp/{{ filename }}@2x.{{ extension }}.webp">
+      <source type="image/{{ extension }}" media="(min-width: 1440px)" srcset="src/images/{{ filename }}@2x.{{ extension }}">
+    {% endif %}
+    <img src="src/images/{{ filename }}.{{ extension }}" alt="" class="image-as-background">
+  </picture>
+{% endmacro %}

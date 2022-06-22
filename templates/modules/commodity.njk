@@ -1,0 +1,73 @@
+{% import "macros/picture-with-webp-source.njk" as webp_picture %}
+
+<section class="commodity container-fluid" id="commodity" data-scroll-section>
+  <header class="commodity__header mb-4"
+    data-scroll
+    data-scroll-offset="100px,0"
+  >
+    <h3 class="commodity__title fz-22 fz-lg-40 fw-400 m-0">Confort, sécurité, commodité</h3>
+  </header>
+  <div class="commodity__grid d-grid grid-gap-4 justify-content-between fz-16">
+    <aside class="commodity__col"
+      data-scroll
+      data-scroll-offset="100px,0"
+      style="--index: 0;"
+    >
+      <div class="commodity__col__inner d-flex flex-column justify-content-between">
+      <div>
+        <h4 class="commodity__subtitle fz-16 fw-400 m-0 tt-uppercase">Confort</h4>
+        <ul class="commodity__list list-none p-0">
+          <li>Projet <strong>exclusif</strong> de 44 unités</li>
+          <li><strong>Terrasse sur le toit</strong> avec espace salon, pergola, potager et bacs végétalisés, BBQ et possibilité de réservation pour les résidents</li>
+          <li><strong>Stationnement intérieur</strong> avec bornes de recharge électriques</li>
+          <li><strong>Système de gestion des déchets</strong> à l’intérieur du bâtiment</li>
+        </ul>
+      </div>
+      <div class="commodity__imgWrap box mt-3 mt-lg-5 w-100">
+        {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_confort', 'jpg') }}
+      </div>
+      </div>
+    </aside>
+    <aside class="commodity__col" 
+      data-scroll 
+      data-scroll-speed="1.6"
+      data-scroll-offset="100px,0"
+      style="--index: 1;"
+    >
+      <div class="commodity__col__inner d-flex flex-column justify-content-between">
+        <div class="commodity__imgWrap box order-2 order-lg-1">
+          {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_sécurité', 'jpg') }}
+        </div>
+        <div class="mb-3 mb-lg-0 mt-lg-5 order-1 order-lg-2">
+          <h4 class="commodity__subtitle fz-16 fw-400 m-0 tt-uppercase">Sécurité</h4>
+          <ul class="commodity__list list-none p-0">
+            <li><strong>Accès sécurisé jour et nuit –</strong> cartes à puce pour les entrées communes et privées</li>
+            <li><strong>Ascenseur</strong></li>
+            <li>Abonnement à la plateforme de <strong>télémédecine Dialogue</strong></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <aside class="commodity__col"
+    data-scroll
+    data-scroll-offset="100px,0"
+    style="--index: 2;"
+    >
+    <div class="commodity__col__inner d-flex flex-column justify-content-between">
+      <div>
+        <h4 class="commodity__subtitle fz-16 fw-400 m-0 tt-uppercase">Commodité</h4>
+        <ul class="commodity__list list-none p-0">
+          <li><strong>Conciergerie privée virtuelle</strong> Walter</li>
+          <li><strong>Accès direct au marché d’alimentation</strong></li>
+          <li><strong>Point de chute</strong> pour le service de nettoyage à sec</li>
+          <li><strong>Accès à une salle multifonctionnelle</strong> pour les événements privés</li>
+          <li>Abonnement à <strong>Espace Tonik</strong></li>
+        </ul>
+      </div>
+      <div class="commodity__imgWrap box mt-3 mt-lg-5 w-100">
+        {{ webp_picture.picture_with_webp_source('VALLEM_IMG_Siteweb_commodité', 'jpg') }}
+      </div>
+      </div>
+    </aside>
+  </div>
+</section>

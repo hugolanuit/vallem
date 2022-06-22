@@ -1,0 +1,70 @@
+{% macro heroContent(titleTagName = 'p', strings = {}) %}
+
+  <div class="heroContent position-relative pt-7 pb-5 px-4 px-lg-0 ta-center">
+    <{{ titleTagName }} 
+      class="heroContent__title d-block ff-heading w-100 lh-none tt-uppercase m-0 position-relative pointer-events-none" 
+      aria-label="{{ strings.hero.aria }}"
+    >
+      <svg width="1505" height="600" viewBox="0 0 1505 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path id="wavePath" transform="translate(0.000000, 300.000000)" d="M1 1.19238C61.875 25.7917 194.34 55.0481 399.17 20.2499C604 -14.5483 809 25.8713 943 67C1077 108.129 1438 267 1504 299" stroke="none" stroke-miterlimit="10"/>
+        <text>
+          <textPath class="heroContent__title__text" startOffset="100%" fill="currentColor" xlink:href="#wavePath">
+            Entrelacés
+          </textPath>
+        </text>
+      </svg>
+    </{{ titleTagName }}>
+
+    <div class="ml-auto mr-auto mt-5">
+      <p class="heroContent__subtitle fz-16 fz-lg-24 ff-extended fw-700 tt-uppercase lh-none mb-0">{{ strings.hero.production }}</p>
+      <p class="heroContent__credits d-none d-lg-block ff-heading fz-12 mb-0 tt-uppercase">
+        {% for line in strings.hero.credits %}
+          <span class="heroContent__credits__line d-block">{{ line|safe }}</span>
+        {% endfor %}
+      </p>
+      
+      <!--googleoff: index-->
+      <p class="heroContent__creditsMobile d-lg-none ff-heading fz-12 mb-0 tt-uppercase" aria-hidden="true">
+        {% for line in strings.hero.credits %}
+          {{ line|safe }}
+        {% endfor %}
+      </p>
+      <!--googleon: index-->
+    </div>
+  </div>
+
+  <footer class="heroContent__footer container-fluid position-relative w-100 d-flex justify-content-center align-items-end fz-14 fz-lg-24">
+    <div class="flex-grow-1 ta-left mb-4">
+      {% if strings.trailer.embed %}
+      <button class="heroContent__trailerBtn d-inline-block" aria-controls="trailerPlayer">
+        <span class="d-flex align-items-center justify-content-between mb-2">
+          <figure class="heroContent__trailerBtn__icon">{% include 'src/svg/play.svg' %}</figure>
+          <time class="fz-12">{{ strings.trailer.time }}</time>
+        </span>
+        <span class="heroContent__trailerBtn__label tt-uppercase">{{ strings.hero.links.trailer }}</span>
+      </button>
+      {% endif %}
+    </div>
+
+    <button 
+      class="heroContent__synopsisBtn position-relative d-none d-lg-flex justify-content-center align-items-end" 
+      data-scroll-href="#synopsis" 
+      data-scroll-offset="-115"
+      data-scroll-to
+    >
+      <span class="heroContent__synopsisBtn__label tt-uppercase mb-4">{{ strings.hero.links.synopsis }}</span>
+      <figure class="heroContent__synopsisBtn__icon position-absolute t-0 l-0 w-100 h-100 overflow-hidden">{% include 'src/svg/half-circle.svg' %}</figure>
+    </button>
+
+    <div class="flex-grow-1 ta-right mb-4">
+      {% if strings.config.launched %}
+        <a href="{{ strings.hero.links.watch.url }}" class="tt-uppercase td-none hero__watchBtn btn --link" target="_blank">
+          <span class="btn__label">{{ strings.hero.links.watch.title }}</span>
+        </a>
+      {% else %}
+        <span class="tt-uppercase ">{{ strings.hero.tease_message }}</span>
+      {% endif %}
+    </div>
+  </footer>
+
+{% endmacro %}

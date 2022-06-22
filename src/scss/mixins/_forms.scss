@@ -1,0 +1,137 @@
+@mixin customInputCheckbox() {
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0px;
+  background: none;
+  border: 1px solid var(--light-beige);
+  color: var(--light-beige);
+  margin: 0;
+  padding: 0;
+  width: 17px;
+  height: 17px;
+  overflow: hidden;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 5px;
+    border-left-width: 6px;
+    border-bottom: 10px solid var(--light-beige);
+    transform: translateY(140%);
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+  }
+
+  &:checked {
+    &:after {
+      animation-name: rotateIn;
+    }
+  }
+
+}
+
+input[type="text"], input[type="email"], input[type="tel"], select {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+
+  width: 100%;
+
+
+  font-size: 16px;
+
+  padding: 10px 0;
+  border-bottom: 1px solid currentColor;
+  color: currentColor;
+  background-color: transparent;
+
+  & + label {
+    margin-top: $gutter/2;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+select {
+  font-size: 11px;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+
+  display: inline-block;
+
+  color: currentColor;
+
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  margin-right: 8px;
+
+  &:before {
+    content: url("/src/svg/case.svg");
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+  }
+
+  &:after {
+    content: url("/src/svg/x.svg");
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    -webkit-transition: opacity 250ms linear;
+    transition: opacity 250ms linear;
+
+  }
+
+  &:checked {
+    &:after {
+      opacity: 1;
+    }
+  }
+
+}
+
+.select-container {
+  position: relative;
+
+  & + label {
+    margin-top: $gutter/2;
+  }
+
+  select {
+    padding-right: 16px;
+  }
+
+  &:after {
+    content: url("/src/svg/caret.svg");
+    display: block;
+    position: absolute;
+    bottom: $gutter/2;
+    right: 0;
+
+  }
+}
+
+label {
+  display: block;
+}

@@ -1,0 +1,51 @@
+.outro-mobile {
+  $self: &;
+
+  .heroContent__footer {
+    display: none;
+  }
+
+  &__footer {
+    height: 74px;
+
+    @include inView {
+      #{$self}__footerVideo {
+        opacity: 0.0001;
+        transform: scale(1.2);
+      }
+      #{$self}__footerBtn {
+        transform: translate3d(-50%, 100%, 0);
+      }
+
+      &.is-inview {
+        #{$self}__footerVideo {
+          opacity: 0.999;
+          transform: scale(1);
+          transition: opacity 450ms linear, transform 1250ms $easeOutCubic;
+          transition-delay: 1950ms;
+        }
+        #{$self}__footerBtn {
+          transform: translate3d(-50%, 0%, 0);
+          transition: transform 750ms 2250ms $easeOutCubic;
+        }
+      }
+    }
+  }
+  &__footerMask {
+    border-radius: 900px;
+    height: 192px;
+    will-change: transform;
+  }
+  &__footerBtn {
+    top: 30px;
+    left: 50%;
+    width: 108px;
+    height: 44px;
+    transform: translate3d(-50%, 0%, 0);
+  }
+
+  // hide on smooth scroll
+  html.will-scroll-smooth & {
+    display: none;
+  }
+}

@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+// variables
+@import "vars/index";
+
+// NPM packages
+@import "@mill3-packages/system-ui-sass/src/system-ui";
+@import "~sass-easing";
+@import "~swiper/swiper.scss";
+
+// vendors
+@import "vendors/index";
+
+
+/*** PROJECT SPECIFICS ***/
+
+// mixins
+@import "mixins/index";
+
+// commons
+@import "commons/index";
+
+// components
+@import "components/index";
+
+// UI
+@import "ui/index";
+
+// modules
+@import "modules/index";

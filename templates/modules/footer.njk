@@ -1,0 +1,70 @@
+<footer
+  class="footer container-fluid"
+  data-scroll
+  data-scroll-section
+>
+  <figure 
+    class="footer__logo mx-auto"
+    data-scroll
+    data-scroll-offset="100px,0"
+  >
+    {% include 'src/svg/logo.svg' %}
+  </figure>
+  <div 
+    class="footer__content position-relative d-grid grid-column-lg-2"
+    data-scroll
+    data-scroll-offset="100px,0"
+
+  >
+    <div class="footer__info w-100 fz-13 pt-4 mx-auto">
+      <div class="d-grid grid-column-md-2 grid-gap-3">
+      <aside class="footer__info__col">
+        <h4 class="m-0 fz-13 tt-uppercase">BUREAU DES VENTES</h4>
+        <p class="mb-0">4605, ch. du Crépuscule, bureau 100 Saint-Mathieu-de-Belœil, Québec</p>
+      </aside>
+      <aside class="footer__info__col">
+        <h4 class="m-0 fz-13 tt-uppercase">ADDRESSE DU PROJET</h4>
+        <p class="mb-0">4605, ch. du Crépuscule, bureau 100 Saint-Mathieu-de-Belœil, Québec</p>
+      </aside>
+      </div>
+      <div class="mt-5">
+        <a class="td-none btn --link --link-arrow fz-14 fw-700" href="/src/images/Vallem_Brochure_siteweb.pdf" target="_blank">
+          <span class="btn__label">Télécharger le dépliant</span>
+          <span class="btn__icon">{% include 'src/svg/fleche.svg' %}</span>
+        </a>
+      </div>
+      <div class="footer__contact w-100 py-3 mt-4 mx-auto fz-13 position-relative">
+        <div class="footer__contact__content d-grid grid-column-md-2">
+          <p class="footer__tel m-0">T. 514.961.7829</p>
+          <div class="footer__social d-flex align-items-center justify-content-between align-items-center">
+            <h5 class="fz-13 m-0 tt-uppercase mr-3">Suivez-nous</h5>
+            <ul class="list-none m-0 p-0 d-flex align-items-center">
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=100081639057560" class="footer__social__links" target="_blank">
+                  {% include 'src/svg/facebook.svg' %}
+                </a>
+              </li>
+
+              {# <li class="ml-3">
+                <a href="/" class="footer__social__links" target="_blank">
+                  {% include 'src/svg/instagram.svg' %}
+                </a>
+              </li> #}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__otium w-100 fz-13 mt-4 mb-0 mb-lg-4 position-relative">
+      <div class="footer__otium__content mx-auto">
+        <figure class="footer__otium__logo mb-3">
+          {% include 'src/svg/logo-otium.svg' %}
+        </figure>
+        <div class="footer__otium__text">
+          <p class="mt-0">Le Vallem est le plus récent projet d’Otium immobilier. Les membres de l’équipe d’Otium élaborent des milieux de vie sans compromis où qualité, beauté et fonctionnalité sont les fondements du bien-être au quotidien.</p>
+          <p>Exigeants et intègres, leur ligne directrice est claire : <strong>livrer ce qu’ils promettent et créer pour d’autres des espaces où ils seraient eux-même heureux de vivre.</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

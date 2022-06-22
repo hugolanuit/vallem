@@ -1,0 +1,60 @@
+@mixin ticker($duration: 30s, $direction: normal) {
+  animation-name: ticker;
+  animation-duration: $duration;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-direction: $direction;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+}
+
+@function duration($frames: 1) {
+  @return #{strip-unit($frames / 30)}s;
+}
+
+@mixin strokeBorderInitial($duration: 800ms) {
+  transition-duration: $duration;
+  transition-delay: calc(var(--stroke-index) * 250ms);
+  transition-timing-function: $easeInOutQuart;
+  transition-property: transform;
+  &.--orientation-vertical {
+    transform: scale3d(1, 0, 1);
+  }
+  &.--orientation-horizontal {
+    transform: scale3d(0, 1, 1);
+  }
+}
+
+@mixin strokeBorderInview($duration: 1800ms) {
+  transition-duration: $duration;
+  &.--orientation-vertical {
+    transform: scale3d(1, 1, 1);
+  }
+  &.--orientation-horizontal {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@mixin fadeInStart() {
+  opacity: 0.0001;
+}
+@mixin fadeInEnd() {
+  opacity: 0.999;
+  transition: opacity 500ms linear;
+}
+
+@mixin slideInUpStart($y: 80px) {
+  opacity: 0.0001;
+  transform: translate3d(0, $y, 0);
+}
+@mixin slideInUpEnd($y: 0px, $duration: 1050ms) {
+  opacity: 0.999;
+  transform: translate3d(0, $y, 0);
+  transition: opacity 500ms linear, transform $duration $easeOutCubic;
+}
+
+@mixin inView() {
+  html.has-scroll-init &[data-scroll] {
+    @content;
+  }
+}

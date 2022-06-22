@@ -1,0 +1,131 @@
+.services {
+  $self: &;
+
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  grid-gap: 72px;
+  
+  color: var(--green);
+  background-color: #d5e6f6;
+
+  &__content {
+    max-width: 526px;
+
+    @include inView() {
+
+      #{$self}__title, #{$self}__text {
+        @include slideInUpStart;
+      }
+
+      #{$self}__subtitle {
+        @include slideInUpStart(-20px);
+      }
+      
+
+      &.is-inview {
+        #{$self}__title, #{$self}__text {
+          @include slideInUpEnd;
+          transition-delay: 250ms;
+        }
+
+        #{$self}__subtitle {
+          @include slideInUpEnd(0px, 650ms);
+          transition-delay: 700ms;
+        }
+      }
+    }
+  }
+
+  &__imgParallax {
+    html.has-scroll-smooth & {
+      top: -6%;
+      bottom: -6%;
+    }
+  }
+
+  &__imgs {
+    max-width: 636px;
+    // padding-right: 118px;
+  }
+
+  &__img1Wrap {
+    margin-right: 110px;
+    // max-width: 526px;
+
+    &:before {
+      padding-bottom: 133%;
+    }
+  }
+
+  &__img2Wrap {
+    margin-top: -218px;
+    margin-left: 110px;
+    // margin-left: 118px;
+    // width: 526px;
+
+    &:before {
+      padding-bottom: 100%;
+    }
+  }
+
+  &__accordions {
+    margin-top: 80px;
+    
+    @include media-breakpoint-up(lg) {
+     margin-top: 200px;
+    }
+
+    &__btn {
+      padding-bottom: 20px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 0;
+        width: 100%;
+        border-bottom: 1px solid;
+
+        opacity: 0.6;
+      }
+    }
+
+    &__content {
+      padding-bottom: 80px;
+
+      #{$self}__coop__content, #{$self}__coop__imgWrap {
+        @include slideInUpStart;
+      }
+      &[aria-hidden="false"] {
+        #{$self}__coop__content, #{$self}__coop__imgWrap {
+          @include slideInUpEnd;
+          transition-delay: 150ms;
+        }
+
+        #{$self}__coop__imgWrap {
+          transition-delay: 300ms;
+        }
+      }
+    }
+  }
+  &__coop {
+    &__content {
+      max-width: 526px;
+    }
+
+    &__imgWrap {
+      max-width: 526px;
+
+      &:before {
+        padding-bottom: 133%;
+      }
+    }
+
+    &__logo {
+      width: 196px;
+      height: auto;
+    }
+  }
+}
